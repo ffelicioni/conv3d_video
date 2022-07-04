@@ -14,10 +14,6 @@ import random as random
 
 import shutil
 
-import tensorflow as tf
-from tensorflow import keras
-
-
 
 def video_capturing_function(dataset,folder_name):
     for i in sorted(dataset.file_path.index):

@@ -1,4 +1,5 @@
 import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
 
 def plot_conv_weight(layer_name,filters,max_filters=128,cols=12):
     h,w,c=filters.shape

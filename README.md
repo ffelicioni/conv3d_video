@@ -12,6 +12,8 @@ Este trabajo de Taller de Tesis 1 se relaciona principalmente con la materia Red
 
 Tiene como antecedentes [[3]](#3).
 
+La notebook [[4]](#4) está disponible en [link a github](https://github.com/ffelicioni/conv3d_video/blob/main/clasificar_hands.ipynb)
+
 ## References
 
 <a id="1">[1] </a>
@@ -29,5 +31,8 @@ Iván Mindlin, Franco Ronchetti (2021).
 Reconocimiento de Lengua de Señas con Redes Neuronales Recurrentes.
 Tesina de Licenciatura. Facultad de Informática. Universidad Nacional de La Plata
 
+<a id="4">[4]</a>
+Felicioni, F. (2022).
+Notebook colab. Materia Taller de Tesis 1 de la Maestría en Explotación de Datos y Descubrimiento del Conocimiento.
 
 

@@ -6,13 +6,12 @@ La librería LSA64 [[1]](#1) tiene un conjunto de 4200 vídeos en el cual un gru
 Las señas elegidas fueron seleccionadas entre las más comunes del lenguaje de señas en Argentina.
 Librería de videos [LSA64: A Dataset for Argentinian Sign Language](http://facundoq.github.io/datasets/lsa64/)
 
-Se utilizan modelos convolucionales para Deep Learning (conv3D) de la librería [Tensorflow/Keras](https://keras.io/api/layers/convolution_layers/convolution3d/) [[2]](#2)
-
+Se utilizan modelos convolucionales (conv3D) para Deep Learning de la librería [Tensorflow/Keras](https://keras.io/api/layers/convolution_layers/convolution3d/) [[2]](#2) . Este trabajo tiene como antecedentes [[3]](#3). Otras referencias de interés [[5]](#5) y [[6]](#6)
+ 
 Este trabajo de Taller de Tesis 1 se relaciona principalmente con la materia Redes Neuronales.
 
-Tiene como antecedentes [[3]](#3).
-
-La notebook [[4]](#4) está disponible en [link a github](https://github.com/ffelicioni/conv3d_video/blob/main/clasificar_hands.ipynb)
+El trabajo realizado está disponible en [link a github](https://github.com/ffelicioni/conv3d_video/)
+La notebook de google colab [[4]](#4) está accesible en [link a notebook](https://github.com/ffelicioni/conv3d_video/blob/main/clasificar_hands.ipynb)
 
 ## References
 
@@ -34,5 +33,15 @@ Tesina de Licenciatura. Facultad de Informática. Universidad Nacional de La Pla
 <a id="4">[4]</a>
 Felicioni, F. (2022).
 Notebook colab. Materia Taller de Tesis 1 de la Maestría en Explotación de Datos y Descubrimiento del Conocimiento.
+
+<a id="5">[5]</a>
+Koller, O. (2020). 
+Quantitative survey of the state of the art in sign language recognition. 
+arXiv preprint arXiv:2008.09918.
+
+<a id="6">[6]</a>
+Bragg, D., Koller, O., Bellard, M., Berke, L., Boudreault, P., Braffort, A., ... & Ringel Morris, M. (2019). 
+Sign language recognition, generation, and translation: An interdisciplinary perspective. 
+The 21st international ACM SIGACCESS conference on computers and accessibility (pp. 16-31).
 
 

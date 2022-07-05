@@ -1,0 +1,23 @@
+@article{Ronchetti2016,
+author="Ronchetti, Franco and Quiroga, Facundo and Estrebou, Cesar and Lanzarini, Laura and Rosete, Alejandro",
+title="LSA64: A Dataset of Argentinian Sign Language",
+journal="XX II Congreso Argentino de Ciencias de la Computación (CACIC)",
+year="2016"
+}
+
+@book{chollet2021deep,
+  title={Deep Learning with Python, Second Edition},
+  author={Chollet, F.},
+  isbn={9781617296864},
+  lccn={2021425412},
+  url={https://books.google.com.ar/books?id=XHpKEAAAQBAJ},
+  year={2021},
+  publisher={Manning}
+}
+
+@misc{linkLSA64,
+  author = {Quiroga, F.},
+  title = {{LSA64: A Dataset for Argentinian Sign Language}},
+  howpublished = "\url{http://facundoq.github.io/datasets/lsa64/}",
+  year = {2021}
+}

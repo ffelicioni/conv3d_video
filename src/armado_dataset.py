@@ -18,6 +18,7 @@ import shutil
 def df_videos_names(lista_archivos):
     import glob
     from pathlib import Path
+    import pandas as pd
     meta=[]
     data = []
     for file_path in sorted(glob.glob(lista_archivos)):

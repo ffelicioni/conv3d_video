@@ -15,6 +15,27 @@ import random as random
 import shutil
 
 
+def df_videos_names(lista_archivos):
+    import glob
+    from pathlib import Path
+    meta=[]
+    data = []
+    for file_path in sorted(glob.glob(lista_archivos)):
+        filename = Path(file_path).stem
+        filename_parts = filename.split('_')
+        metadata = {'file_path': file_path,
+              'ID': filename_parts[0],
+              'persona': filename_parts[1],
+              'repeticion': filename_parts[2],
+              'mano': filename_parts[3]
+              }
+        meta.append(metadata)
+
+    df = pd.DataFrame(meta)
+    df.ID=df.ID.astype('int64')
+    return df
+
+
 def video_capturing_function(dataset,folder_name):
     for i in sorted(dataset.file_path.index):
         video_name=Path(dataset.file_path[i]).stem
@@ -119,61 +140,3 @@ def load_data_from_tf(dataset,directory):
 
     #print(np.max(np.array(list_tf)))
     return np.array(list_tf)
-
-
-
-class CustomSequence(keras.utils.Sequence):
-
-    def __init__(self, batch_size):
-        super().__init__()
-
-        self.batch_size = batch_size
-        self.n=3840
-        
-
-    def __len__(self):
-        # return the number of BATCHES (not samples)
-        # In this dataset
-        return self.n // self.batch_size
-
-    def __getitem__(self, batch_index):
-        # Return BATCH (not a sample) with index `batch_index`
-
-        #Calculate first and last index of samples of the batch
-        idx_start = batch_index*self.batch_size
-        idx_end = idx_start+self.batch_size
-        #select samples
-        #batch_x = self.x[start:end,:,:,:]
-        #batch_y = self.y[start:end,0]
-
-        X=load_data_from_tf(df_train_batch[idx_start:idx_end],"train_data")
-        a=np.array(df_train_batch[idx_start:idx_end].ID)
-        y = tf.keras.utils.to_categorical(a-1, num_classes =64)
-        #print('salida:',np.max(df_train_batch[idx_start:idx_end].ID)) 
-
-        nf,w,h=X[0].shape
-        #print(nf,w,h)
-        #print(len(X))
-        X.reshape(self.batch_size,nf,w,h,1)
-        
-        return X, y
-    
-    
-def generator(batch_size):
-    n=3840
-    while True:
-        for i in range(n//batch_size):
-            index=i*batch_size
-            X=load_data_from_tf(df_train_batch[index:index+batch_size],"train_data")
-            #y=df_train_batch[index:index+batch_size].ID
-            a=np.array(df_train_batch[index:index+batch_size].ID)
-            y = tf.keras.utils.to_categorical(a-1, num_classes =64)
-      
-
-            nf,w,h=X[0].shape
-            #print(nf,w,h)
-            #print(len(X))
-            X.reshape(batch_size,nf,w,h,1)
-            #return X, y
-
-            yield X,y

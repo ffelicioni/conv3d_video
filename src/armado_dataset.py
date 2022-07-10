@@ -15,6 +15,27 @@ import random as random
 import shutil
 
 
+def df_videos_names(lista_archivos):
+    import glob
+    from pathlib import Path
+    meta=[]
+    data = []
+    for file_path in sorted(glob.glob(lista_archivos)):
+        filename = Path(file_path).stem
+        filename_parts = filename.split('_')
+        metadata = {'file_path': file_path,
+              'ID': filename_parts[0],
+              'persona': filename_parts[1],
+              'repeticion': filename_parts[2],
+              'mano': filename_parts[3]
+              }
+        meta.append(metadata)
+
+    df = pd.DataFrame(meta)
+    df.ID=df.ID.astype('int64')
+    return df
+
+
 def video_capturing_function(dataset,folder_name):
     for i in sorted(dataset.file_path.index):
         video_name=Path(dataset.file_path[i]).stem

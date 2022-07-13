@@ -38,7 +38,7 @@ def df_videos_names(lista_archivos):
     return df
 
 
-def video_duracion(lista_imagenes):
+def video_duracion(lista_imagenes,DIR):
     import glob
     from pathlib import Path
     import pandas as pd

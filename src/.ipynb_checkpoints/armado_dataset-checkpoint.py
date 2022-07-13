@@ -56,7 +56,7 @@ def video_duracion(lista_imagenes):
                    }
         meta.append(metadata)
     df_duracion=pd.DataFrame(meta)
-return df_duracion
+    return df_duracion
 
 
 def video_capturing_function(dataset,folder_name):

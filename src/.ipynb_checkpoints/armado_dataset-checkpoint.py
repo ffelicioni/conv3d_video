@@ -38,6 +38,27 @@ def df_videos_names(lista_archivos):
     return df
 
 
+def video_duracion(lista_imagenes):
+    import glob
+    from pathlib import Path
+    import pandas as pd
+    import os as os
+    meta=[]
+    for carpeta in lista_imagenes:
+        cantidad_frames=len(os.listdir(os.path.join(DIR, carpeta)))
+        filename_parts = carpeta.split('_')
+        metadata = {'file_path': carpeta,
+                   'ID': filename_parts[0],
+                   'persona': filename_parts[1],
+                   'repeticion': filename_parts[2],
+                  'mano': filename_parts[3],
+                  'cantidad_frames':cantidad_frames,
+                   }
+        meta.append(metadata)
+    df_duracion=pd.DataFrame(meta)
+return df_duracion
+
+
 def video_capturing_function(dataset,folder_name):
     for i in sorted(dataset.file_path.index):
         video_name=Path(dataset.file_path[i]).stem
